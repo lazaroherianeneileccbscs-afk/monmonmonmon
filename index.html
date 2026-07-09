@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Monmon’s Birthday Adventure</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Start Screen -->
+<div id="scene-start" class="scene active">
+  <div class="petals-container"></div>
+  <div class="start-content">
+    <div class="start-title">Monmon’s Birthday Adventure</div>
+    <div class="start-message">Click anywhere to start</div>
+  </div>
+</div>
+    <!-- Loading Scene -->
+    <div id="scene-loading" class="scene ">
+      <div class="petals-container"></div>
+      <div class="loading-content">
+        <div class="music-icon">♪</div>
+        <div class="loading-bar">
+          <div class="loading-progress"></div>
+        </div>
+        <div class="loading-text">Loading Monmon’s Birthday...</div>
+      </div>
+    </div>
+
+    <!-- Sleep Scene -->
+    <div id="scene-sleep" class="scene">
+      <div class="petals-container"></div>
+      <div class="room">
+        <img id="momong-sleep" class="cat-sleep" src="assets/cat/sleep.jpg" alt="Momong sleeping" />
+      </div>
+      <div class="dialogue-box hidden" id="dialogue-sleep">
+        <div class="dialogue-text">Zzz...</div>
+      </div>
+    </div>
+
+    <!-- Wake & Story Scene -->
+    <div id="scene-wake" class="scene">
+      <div class="petals-container"></div>
+      <div class="room">
+        <img id="momong-wake" class="cat-wake" src="assets/cat/sleep.jpg" alt="Momong waking" />
+      </div>
+      <div class="dialogue-box" id="dialogue-wake">
+        <div class="dialogue-text"></div>
+      </div>
+    </div>
+
+    <!-- Mission Scene -->
+    <div id="scene-mission" class="scene">
+      <div class="petals-container"></div>
+      <div class="mission-popup">
+  <div class="mission-title">Mission Start!</div>
+  <div class="mission-list">
+    <div class="mission-item">🎂 Cake</div>
+    <div class="mission-item">🎁 Present</div>
+    <div class="mission-item">🌸 Flowers</div>
+    <div class="mission-item">📚 Books</div>
+    <div class="mission-item">🌞 Window</div>
+    <div class="mission-item">🖼️ Frame</div>
+    <div class="mission-item">❤️ Heart</div>
+  </div>
+</div>
+    </div>
+
+    <!-- Room Exploration Scene -->
+    <div id="scene-room" class="scene">
+      <div class="petals-container"></div>
+      <div class="room">
+        <div class="interactive-object" data-object="cake" style="bottom: 12%; left: 22%;">🎂</div>
+        <div class="interactive-object" data-object="gift" style="bottom: 22%; right: 18%;">🎁</div>
+        <div class="interactive-object" data-object="flowers" style="bottom: 35%; left: 12%;">🌸</div>
+        <div class="interactive-object" data-object="books" style="bottom: 30%; right: 10%;">📚</div>
+        <div class="interactive-object" data-object="window" style="top: 8%; left: 12%;">🌞</div>
+        <div class="interactive-object" data-object="frame" style="top: 12%; right: 10%;">🖼️</div>
+        <div class="interactive-object" data-object="heart" style="top: 25%; left: 40%;">❤️</div>
+        <img class="interactive-cat" data-object="momong" src="assets/cat/sleep.jpg" alt="Momong" />
+      </div>
+      <div class="dialogue-box" id="dialogue-room">
+        <div class="dialogue-text"></div>
+      </div>
+    </div>
+
+    <!-- Memory Unlock Overlay -->
+    <div id="scene-memory" class="scene overlay">
+      <div class="petals-container"></div>
+      <div class="memory-container"></div>
+    </div>
+
+    <!-- Wanted Poster Scene -->
+    <div id="scene-wanted" class="scene overlay">
+      <div class="petals-container"></div>
+      <div class="wanted-poster">
+        <div class="wanted-title">WANTED</div>
+        <img class="wanted-cat" src="assets/cat/tongue.jpg" alt="Momong wanted" />
+        <div class="wanted-name">MOMONG</div>
+        <div class="wanted-crime">Crime: Stealing Birthdays</div>
+        <div class="wanted-reward">Reward: Unlimited Head Pats</div>
+      </div>
+    </div>
+
+    <!-- Boss Scene -->
+    <div id="scene-boss" class="scene">
+      <div class="petals-container"></div>
+      <div class="room boss-room">
+        <img class="boss-cat" src="assets/cat/sleep.jpg" alt="Momong sad" />
+      </div>
+      <div class="dialogue-box" id="dialogue-boss">
+        <div class="dialogue-text"></div>
+      </div>
+    </div>
+
+    <!-- Gift Scene -->
+    <div id="scene-gift" class="scene">
+      <div class="petals-container"></div>
+      <div class="gift-container">
+        <div class="gift-box" id="gift-box">
+          <div class="gift-ribbon"></div>
+          <div class="gift-lid"></div>
+          <div class="gift-inner"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final Letter Scene -->
+    <div id="scene-letter" class="scene overlay">
+      <div class="petals-container"></div>
+      <div class="letter-card">
+        <img class="letter-bg" src="assets/photos/5.jpg" alt="Sunset" />
+        <div class="letter-overlay"></div>
+        <div class="letter-content">
+          <div class="letter-text"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ending Scene -->
+    <div id="scene-ending" class="scene">
+      <div class="petals-container"></div>
+      <div class="ending-content">
+        <div class="ending-title">Happy 21st Birthday, Monmon!</div>
+        <div class="ending-message">Thank you for choosing me every day.</div>
+        <div class="ending-message">Thank you for making ordinary days feel extraordinary.</div>
+        <div class="ending-message">I hope this little adventure made you smile even a little.</div>
+        <div class="ending-message">I love you so much.</div>
+        <div class="ending-message">Happy Birthday.</div>
+        <div class="ending-signature">— loml mo ❤️</div>
+        <div class="ending-buttons">
+          <button id="music-btn" class="ending-btn">♪ Music</button>
+          <button id="replay-btn" class="ending-btn">Replay</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sparkles Container -->
+    <div id="sparkles-container"></div>
+    <!-- Hearts Container -->
+    <div id="hearts-container"></div>
+    <!-- Confetti Container -->
+    <div id="confetti-container"></div>
+  </div>
+
+  <!-- AUDIO -->
+  <audio id="audio-start" preload="auto">
+    <source src="assets/audio/start.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="audio-meow" src="assets/audio/meow.mp3"></audio>
+  <audio id="audio-sparkle" src="assets/audio/sparkle.mp3"></audio>
+  <audio id="audio-heart" src="assets/audio/heart.mp3"></audio>
+  <audio id="audio-music-memory" src="assets/audio/memory.mp3"></audio>
+  <audio id="audio-music-boss" src="assets/audio/boss.mp3"></audio>
+  <audio id="audio-music-ending" src="assets/audio/ending.mp3"></audio>
+  <audio id="audio-gift" src="assets/audio/gift.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
