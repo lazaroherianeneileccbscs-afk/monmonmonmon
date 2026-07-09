@@ -22,3 +22,4 @@ A Nintendo-inspired birthday adventure game made with HTML, CSS, and JavaScript.
 
 ## Author
 Laz
+Deployment test
